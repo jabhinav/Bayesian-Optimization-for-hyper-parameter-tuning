@@ -12,5 +12,5 @@ Instructions to run
 * Implementation of Classification module is in Matlab.
 * STL_opt is the matlab wrapper required for spearmint package.
 * config.json is the configuration file with specifications as per the spearmint instruction.
-
+* Bayesian Optimization used is minimizing the classification error
 * L-BFGS algorithm is used to minimize the cost function for weights training in Softmax Classifier and Sparse Auto-encoder
