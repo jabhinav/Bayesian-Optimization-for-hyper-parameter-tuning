@@ -1,0 +1,31 @@
+{
+"hiddenSize" : {
+  "name":"hiddenSize",
+  "type":"int",
+  "min":100,
+  "max":300,
+  "size":1
+},
+"sparsityParam" : {
+  "name":"sparsityParam",
+  "type":"float",
+  "min":0.1,
+  "max":0.5,
+  "size":1
+},
+"lambda" : {
+  "name":"lambda",
+  "type":"float",
+  "min":0.001,
+  "max":0.01,
+  "size":1
+},
+"beta" : {
+  "name":"beta",
+  "type":"int",
+  "min":1,
+  "max":5,
+  "size":1
+}
+}
+
