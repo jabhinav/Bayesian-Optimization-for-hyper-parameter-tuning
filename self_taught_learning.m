@@ -53,9 +53,6 @@ fprintf('# examples in supervised testing set: %d\n\n', size(testData, 2));
 %  Randomly initialize the parameters
 theta = initializeParameters(hiddenSize, inputSize);
 
-%% ----------------- YOUR CODE HERE ----------------------
-%  Find opttheta by running the sparse autoencoder on
-%  unlabeledTrainingImages
 
 opttheta = theta; 
 addpath minFunc/
@@ -80,9 +77,7 @@ W1 = reshape(opttheta(1:hiddenSize * inputSize), hiddenSize, inputSize);
 
 %%======================================================================
 %% STEP 3: Extract Features from the Supervised Dataset
-%  
-%  You need to complete the code in feedForwardAutoencoder.m so that the 
-%  following command will extract features from the data.
+
 
 trainFeatures = feedForwardAutoencoder(opttheta, hiddenSize, inputSize, ...
                                        trainData);
@@ -94,13 +89,10 @@ testFeatures = feedForwardAutoencoder(opttheta, hiddenSize, inputSize, ...
 %% STEP 4: Train the softmax classifier
 
 softmaxModel = struct;  
-%% ----------------- YOUR CODE HERE ----------------------
-%  Use softmaxTrain.m from the previous exercise to train a multi-class
-%  classifier. 
 
 %  Use lambda = 1e-4 for the weight regularization for softmax
 
-% You need to compute softmaxModel using softmaxTrain on trainFeatures and
+% compute softmaxModel using softmaxTrain on trainFeatures and
 % trainLabels
 
 numClasses = 5; % use a labeled dataset with the digits 1 to 5 with which to train the softmax classifier.
@@ -112,9 +104,6 @@ softmaxModel = softmaxTrain(hiddenSize, numClasses, 1e-4, ...
 %%======================================================================
 %% STEP 5: Testing 
 
-%% ----------------- YOUR CODE HERE ----------------------
-% Compute Predictions on the test set (testFeatures) using softmaxPredict
-% and softmaxModel
 
 [pred] = softmaxPredict(softmaxModel, testFeatures);
 
